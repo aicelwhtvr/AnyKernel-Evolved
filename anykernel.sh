@@ -8,18 +8,28 @@ kernel.string=Project Paradox kernel by @alcindyn
 do.devicecheck=1
 do.modules=0
 do.systemless=1
+build.type=stable
+do.devicecheck=1
+do.modules=0
+do.systemless=1
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=lancelot 
-device.name2=lava
-device.name3=shiva
-device.name4=
-device.name5=
-supported.versions=
+device.name1=X01BD
+device.name2=X01BDA
+device.name3=Zenfone Max Pro M2 (X01BD)
+device.name4=ASUS_X01BD
+device.name5=ASUS_X01BDA
+supported.versions=9-12
 supported.patchlevels=
 '; } # end properties
 
+# Installation Method
+X00TD=0
+
 # shell variables
+if [ "$X00TD" = "1" ];then
+block=/dev/block/platform/soc/c0c4000.sdhci/by-name/boot;
+else
 block=/dev/block/by-name/boot;
 is_slot_device=0;
 ramdisk_compression=auto;
